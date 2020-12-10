@@ -1,0 +1,12 @@
+return new Promise(async (resolve,reject) => {
+    app.log(app.prediction,'The predicted text');
+    // Your logic goes here
+    let time = app.prediction.entities.date[0].value.value ? app.prediction.entities.date[0].value.value : false;
+    if (time) {
+    resolve();
+}
+else {
+    await app.sendTextMessage("Sorry! Please enter a valid time");
+    reject();
+}
+});
