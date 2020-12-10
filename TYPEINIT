@@ -1,0 +1,19 @@
+return new Promise(resolve => {
+    // Your logic goes here
+    let message = app.data.message.toLowerCase();
+    const typePattern = {
+        "CornPizza": /Pizza/,
+        "cheese pizza": /pizza/
+    };
+    let type;
+    for (let key in typePattern){
+        if(message.match(typePattern[key])){
+            type = key;
+            break;
+        }
+    }
+    if (type) {
+         app.setStep("type",type);
+    }
+    resolve();
+});
