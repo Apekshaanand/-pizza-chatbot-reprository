@@ -1,0 +1,6 @@
+app.customOptions = {
+"minConfidence": 0.8,
+"excludeParamsForSwitching" :["name","mobile","emailid","date"]
+} ;
+//app.log('this is being executed from main');
+return app.start(app.customOptions);
